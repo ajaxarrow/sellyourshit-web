@@ -40,6 +40,6 @@ Ready to put something in that empty inventory? See
 ![Onboarding profile form](./images/onboarding-setup/step-1-profile-form.png)
 
 ## Further Modifications
-You can still change these data in settings under Profile. Click [here](../settings/edit-profile.md) to see how to change these data.
+You can still change these data in settings under Profile. Click [here]() to see how to change these data.
 
 

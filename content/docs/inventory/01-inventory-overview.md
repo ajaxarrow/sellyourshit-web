@@ -53,7 +53,5 @@ This button allow items to be selected and you can know mark these selected item
 
 
 
-
-
 Haven't set up your store profile yet? Start at
-[Onboarding Setup](../onboarding/onboarding-setup.md).
+[Onboarding Setup](../onboarding/01-onboarding-setup.md).

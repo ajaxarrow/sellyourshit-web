@@ -25,6 +25,6 @@ become their own brand the first time (fix them from Settings → Manage
 Options).
 
 Need your store profile set up first? See
-[Onboarding Setup](../onboarding/onboarding-setup.md).
+[Onboarding Setup](../onboarding/01-onboarding-setup.md).
 
 ![Item form example](./images/adding-items/item-form-example.png)
