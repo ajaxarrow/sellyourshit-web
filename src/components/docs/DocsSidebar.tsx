@@ -5,7 +5,7 @@ export function DocsSidebar() {
   const sections = getNavSections();
 
   return (
-    <nav className="hidden w-56 shrink-0 border-r border-border px-6 py-28 md:block">
+    <nav className="sticky top-16 hidden h-[calc(100vh-4rem)] w-56 shrink-0 self-start overflow-y-auto border-r border-border px-6 py-28 md:block">
       {sections.map((section) => {
         const pages = getSectionPages(section);
         return (
