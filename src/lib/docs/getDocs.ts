@@ -89,6 +89,33 @@ export function getSectionPages(section: string): DocMeta[] {
     .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
 }
 
+export interface DocNavItem {
+  section: string;
+  slug: string;
+  title: string;
+}
+
+/** All docs across every section, in nav.json order then each section's own order. */
+function getAllDocsFlat(): DocNavItem[] {
+  return getNavSections().flatMap((section) =>
+    getSectionPages(section).map(({ section: s, slug, title }) => ({ section: s, slug, title })),
+  );
+}
+
+/** The doc immediately before/after this one in reading order, crossing section boundaries. */
+export function getAdjacentDocs(
+  section: string,
+  slug: string,
+): { prev: DocNavItem | null; next: DocNavItem | null } {
+  const flat = getAllDocsFlat();
+  const index = flat.findIndex((d) => d.section === section && d.slug === slug);
+  if (index === -1) return { prev: null, next: null };
+  return {
+    prev: index > 0 ? flat[index - 1] : null,
+    next: index < flat.length - 1 ? flat[index + 1] : null,
+  };
+}
+
 export async function getDocBySlug(section: string, slug: string): Promise<DocPage> {
   const { data, content } = readRaw(section, slug);
   const title = extractTitle(content, data.title);

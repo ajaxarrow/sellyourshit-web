@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { docFileExists, getAllDocParams, getDocBySlug } from "@/lib/docs/getDocs";
+import { docFileExists, getAdjacentDocs, getAllDocParams, getDocBySlug } from "@/lib/docs/getDocs";
 import { SnakeToc } from "@/components/docs/SnakeToc";
+import { DocsPagination } from "@/components/docs/DocsPagination";
 import { Container } from "@/components/ui/Container";
 
 export function generateStaticParams() {
@@ -27,13 +28,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function DocPage({ params }: PageProps) {
   const doc = await loadDoc(params);
   if (!doc) notFound();
+  const { prev, next } = getAdjacentDocs(doc.section, doc.slug);
 
   return (
     <Container bleed className="relative flex gap-16 px-10 py-16">
-      <article
-        className="doc-content min-w-0 flex-1 max-w-[720px]"
-        dangerouslySetInnerHTML={{ __html: doc.html }}
-      />
+      <div className="min-w-0 flex-1 max-w-[720px]">
+        <article className="doc-content" dangerouslySetInnerHTML={{ __html: doc.html }} />
+        <DocsPagination prev={prev} next={next} />
+      </div>
       <SnakeToc headings={doc.headings} />
     </Container>
   );
