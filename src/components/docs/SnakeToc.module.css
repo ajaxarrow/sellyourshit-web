@@ -1,0 +1,68 @@
+/* Ported from the AboutView.vue reference widget's <style> block, re-themed
+   to sellyoshit's tokens/fonts and rebuilt as a flat <li> list (the .sub
+   modifier stands in for the Vue version's nested <ul><li> h3 indent —
+   offsetLeft is what the path-drawing math reads, not DOM nesting depth). */
+
+.toc {
+  position: fixed;
+  right: 48px;
+  top: 110px;
+  width: 240px;
+  /* Left padding matters, not just visually: the path math draws
+     un-indented items at x = offsetLeft - 5, i.e. -5 for the leftmost
+     column — with no left padding that falls outside the SVG's own
+     box and gets silently clipped, cutting off exactly those segments. */
+  padding: 8px 20px;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc li {
+  margin-bottom: 6px;
+}
+
+.sub {
+  margin-left: 1.75em;
+}
+
+.toc a {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-ink-faint);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.toc a:hover {
+  color: var(--color-ink);
+}
+
+.visible > a {
+  color: var(--color-accent);
+  transform: translateX(5px);
+}
+
+.tocMarker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.tocMarker path {
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1180px) {
+  .toc {
+    display: none;
+  }
+}

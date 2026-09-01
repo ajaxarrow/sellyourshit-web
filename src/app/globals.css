@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-anton);
+  --font-label: var(--font-bebas-neue);
+  --font-body: var(--font-space-grotesk);
+
+  /* Runtime tokens below are re-aliased here so utilities (bg-bg, text-ink,
+     border-border-strong, text-accent, ...) re-resolve on theme swap. */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
+  --color-on-danger: var(--on-danger);
+
+  --text-display-lg: clamp(3rem, 8vw, 7rem);
+  --text-display-md: clamp(2.25rem, 6vw, 4.5rem);
+  --text-display-sm: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* ── Theme tokens — mirrors lib/core/theme/color_tokens.dart ──── */
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface-raised: #1c1c1c;
+  --border: #2a2a2a;
+  --border-strong: #3d3d3d;
+  --ink: #f5f5f0;
+  --ink-muted: #a8a8a0;
+  --ink-faint: #6b6b65;
+  --accent: #c6ff00;
+  --on-accent: #0a0a0a;
+  --danger: #e5484d;
+  --on-danger: #f5f5f0;
+}
+
+[data-theme="light"] {
+  --bg: #f2f0e8;
+  --surface: #eae7dc;
+  --surface-raised: #e0dcce;
+  --border: #d1ccbb;
+  --border-strong: #afa88f;
+  --ink: #16150f;
+  --ink-muted: #56503f;
+  --ink-faint: #7d775f;
+  --accent: #445900;
+  --on-accent: #f5f3ea;
+  --danger: #b0242b;
+  --on-danger: #f5f3ea;
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  border-radius: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), "Space Grotesk", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), "Anton", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+/* ── Rendered doc content (from content/docs markdown files) ────
+   Not Tailwind utilities: the HTML comes from a remark/rehype
+   pipeline as a raw string (dangerouslySetInnerHTML), so it needs
+   its own prose rules rather than per-element classes. */
+.doc-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.doc-content h2 {
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  scroll-margin-top: 2rem;
+}
+
+.doc-content h3 {
+  font-size: 1.1rem;
+  margin: 1.75rem 0 0.75rem;
+  scroll-margin-top: 2rem;
+}
+
+.doc-content p {
+  font-family: var(--font-body), sans-serif;
+  line-height: 1.7;
+  margin: 1rem 0;
+  color: var(--ink-muted);
+}
+
+.doc-content ul,
+.doc-content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: var(--ink-muted);
+}
+
+.doc-content li {
+  margin: 0.4rem 0;
+  line-height: 1.6;
+}
+
+.doc-content a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.doc-content img {
+  max-width: 100%;
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.doc-content code {
+  background: var(--surface);
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+.doc-content strong {
+  color: var(--ink);
+}
