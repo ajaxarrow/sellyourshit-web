@@ -50,6 +50,11 @@ function readRaw(section: string, slug: string) {
   return matter(raw);
 }
 
+/** Whether {section}/{slug}.md exists — the only case that should render as a 404. */
+export function docFileExists(section: string, slug: string): boolean {
+  return fs.existsSync(path.join(DOCS_DIR, section, `${slug}.md`));
+}
+
 function extractTitle(content: string, frontmatterTitle?: unknown): string {
   if (typeof frontmatterTitle === "string" && frontmatterTitle.trim()) {
     return frontmatterTitle.trim();

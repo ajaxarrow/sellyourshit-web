@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getAllDocParams, getDocBySlug } from "@/lib/docs/getDocs";
+import { docFileExists, getAllDocParams, getDocBySlug } from "@/lib/docs/getDocs";
 import { SnakeToc } from "@/components/docs/SnakeToc";
 import { Container } from "@/components/ui/Container";
 
@@ -14,11 +14,8 @@ interface PageProps {
 
 async function loadDoc(params: PageProps["params"]) {
   const { section, slug } = await params;
-  try {
-    return await getDocBySlug(section, slug);
-  } catch {
-    return null;
-  }
+  if (!docFileExists(section, slug)) return null;
+  return getDocBySlug(section, slug);
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
