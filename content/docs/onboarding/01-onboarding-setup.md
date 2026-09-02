@@ -24,6 +24,10 @@ receipts and in the backup file metadata.
 The name of your closet/store as customers know it. This is what shows
 up at the top of the app once onboarding is done.
 
+### Currency
+
+This track what currency you wanna use in the app. Default is php since I'm Filipino, duh. I figure there will be non pinoys that will use the platform so I've added other currency since I'm that thoughtful of y'all
+
 ### Track closet items
 
 Checking track closet items checkbox allows you to sell stuff that you already own. By toggling this option, when you sold clothes that are from your closets, it is not included in the capital computation (All sold closet items belongs to profit)
@@ -35,7 +39,7 @@ to the local database and takes you straight to your (empty) inventory.
 There's no server round-trip — everything lives on-device.
 
 Ready to put something in that empty inventory? See
-[Adding an Item](../inventory/adding-items.md) next.
+[Adding an Item](../inventory/02-adding-items.md) next.
 
 ![Onboarding profile form](./images/onboarding-setup/step-1-profile-form.png)
 

@@ -6,15 +6,16 @@ order: 1
 # Inventory Overview
 
 Everything you're selling lives in one inventory list. This page covers
-how a garment is put together and how closet items differ from
+how an item card is put together and how closet items differ from
 sourced ones.
 
 ## Closet vs. Sourced Items
 
 Items can be tagged as coming **from your own closet** (stuff you
-already owned) versus items you sourced specifically to resell. This
-matters for the analytics breakdown — closet items skip cost-basis
-tracking since there was no purchase price to log.
+already owned) or as something you sourced specifically to resell.
+That distinction isn't just for show, closet items skip cost-basis
+tracking entirely in the analytics breakdown, since there was never a
+purchase price to log for that hoodie you've owned since 2019.
 
 ## Item Card Anatomy
 
@@ -23,35 +24,62 @@ and a couple of at-a-glance indicators.
 
 ### Badges
 
-Every item card can have 2 type of badge. One is the status badge. An item can be available or sold. If an item does have more than 1 stock, it should show (n item sold) / (n items left) in the status badge. Second badge pops up if an item is from closet. So if a garment doesn't have a closet badge, it is a sourced garment.
+Every item card can carry up to two badges:
+
+- **Status badge** — shows whether the item is available or sold. If
+  it has more than one unit in stock, this badge shows
+  `(n sold) / (n left)` instead.
+- **Closet badge** — shows up only if the item came from your closet.
+  No badge means it's a sourced garment.
 
 ### Price
 
-The highlighted number refers to the asking price of the garment. Asking price is in white text format. If this turned to neon yellow green, this means that the item was already sold and the displayed price become the sold price
+The highlighted number is the garment's asking price, shown in white.
+Once the item sells, that same number turns neon yellow-green and
+switches from the asking price to whatever it actually sold for.
 
-### Other Included Details
-The header text displays the garment title and its brand, below the price display the date added of the garment, if the garment is already sold, it displays the sold data. On the right side displays the if the garments is for men's, women's or a unisex item
+### Other Details
 
+- **Header** — the garment's title and brand.
+- **Below the price** — the date it was added, or the sold date once
+  it's gone.
+- **Right side** — whether the garment is for men, women, or unisex.
 
 ## Action Buttons
-There are 5 total action items in inventory page, 4 at the appbar and 1 floating action items
+
+There are 5 action buttons total on the inventory page: 4 in the app
+bar and 1 floating.
 
 ### Add Button
-The floating add icon refers to adding a new item to the inventory. Click here to know more about adding items
+
+The floating **+** button adds a new item to your inventory. Head to
+[Adding an Item](./02-adding-items.md) for the full walkthrough.
 
 ### Search Button
-The magnifying glass icon refers to searching items in inventory via a specified keyword
+
+The magnifying glass searches your inventory by keyword — because
+scrolling through 300 tees to find one graphic print isn't a good use
+of your time. See [Filtering and Searching](./05-filtering-and-searching.md)
+for the details.
 
 ### View As Button
-This button dictates on how the item cards were viewed in the inventory, it could be in 2,3 or 4 per row grid or displayed as list items. The default is 2 per row grid
+
+Controls how item cards are displayed — 2, 3, or 4 per row grid, or as
+a list. Defaults to 2 per row.
 
 ### Filter Button
-This pops up a modal overlay in filtering and sorting the inventory items. View this guide page to know more about filtering and sorting items
+
+Opens a modal for filtering and sorting your inventory list. See
+[Filtering and Searching](./05-filtering-and-searching.md) for the full
+breakdown.
 
 ### Select Items Button
-This button allow items to be selected and you can know mark these selected items as sold. Note that you can still use the filtering, searching and changing viewing buttons when selecting items. This help in speeding up the process of selecting garments. To know more about marking garments as sold, follow this guide
 
-
+Lets you select multiple items and mark them all as sold at once. You
+can still filter, search, and switch views while selecting, so you're
+not stuck scrolling through an unsorted mess to find what you actually
+sold. See [Selling Items](./04-selling-items.md) to learn how the
+marking-as-sold flow works.
 
 Haven't set up your store profile yet? Start at
 [Onboarding Setup](../onboarding/01-onboarding-setup.md).
