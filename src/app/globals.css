@@ -104,8 +104,17 @@ a {
   color: inherit;
 }
 
-p {
-  margin: 0;
+/* ── Custom cursor ──────────────────────────────────────────────
+   Applied by CustomCursor.tsx only on fine-pointer (mouse) devices;
+   touch/coarse-pointer visitors keep the native cursor untouched. */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.custom-cursor-active input,
+.custom-cursor-active textarea {
+  cursor: text !important;
 }
 
 /* ── Rendered doc content (from content/docs markdown files) ────

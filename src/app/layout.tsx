@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { Nav } from "@/components/Nav";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { CustomCursor } from "@/components/CustomCursor";
 
 const anton = Anton({
   weight: "400",
@@ -44,6 +45,7 @@ export default function RootLayout({
           <Nav />
           {children}
           <ThemeToggle />
+          <CustomCursor />
         </Providers>
       </body>
     </html>
