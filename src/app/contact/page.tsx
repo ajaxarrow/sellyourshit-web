@@ -1,10 +1,16 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
+import { ButtonAction } from "@/components/ui/Button";
+import { staggerContainer, snapUp } from "@/components/ui/motion-variants";
 
 type Status = "idle" | "sending" | "sent" | "error";
+
+const fieldClasses =
+  "w-full border-b border-border bg-transparent py-3 font-body text-ink outline-none transition-colors focus:border-accent";
 
 export default function ContactPage() {
   const [senderEmail, setSenderEmail] = useState("");
@@ -36,76 +42,108 @@ export default function ContactPage() {
     }
   }
 
-  if (status === "sent") {
-    return (
-      <Section canvas="a" className="pt-40">
-        <Container className="max-w-xl">
-          <h1 className="font-display text-3xl">TICKET SENT</h1>
-          <p className="mt-4 font-body text-ink-muted">
-            Thanks for reaching out! We&apos;ll email you back once your
-            concern is received.
-          </p>
-        </Container>
-      </Section>
-    );
-  }
-
   return (
-    <Section canvas="a" className="pt-40">
-      <Container className="max-w-xl">
-        <h1 className="font-display text-3xl">SUBMIT A TICKET</h1>
-        <p className="mt-4 font-body text-ink-muted">
-          Run into a bug, or have feedback? Send us a message and we&apos;ll
-          get back to you by email.
-        </p>
-        <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-5">
-          <label className="flex flex-col gap-2">
-            <span className="font-label text-xs uppercase tracking-[0.15em] text-ink-muted">
-              Your email
-            </span>
-            <input
-              type="email"
-              required
-              value={senderEmail}
-              onChange={(e) => setSenderEmail(e.target.value)}
-              className="border border-border bg-surface px-4 py-3 font-body text-ink outline-none focus:border-accent"
-            />
-          </label>
-          <label className="flex flex-col gap-2">
-            <span className="font-label text-xs uppercase tracking-[0.15em] text-ink-muted">
-              Subject
-            </span>
-            <input
-              type="text"
-              required
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              className="border border-border bg-surface px-4 py-3 font-body text-ink outline-none focus:border-accent"
-            />
-          </label>
-          <label className="flex flex-col gap-2">
-            <span className="font-label text-xs uppercase tracking-[0.15em] text-ink-muted">
-              Content
-            </span>
-            <textarea
-              required
-              rows={6}
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-              className="border border-border bg-surface px-4 py-3 font-body text-ink outline-none focus:border-accent"
-            />
-          </label>
-          {status === "error" && error && (
-            <p className="font-body text-sm text-danger">{error}</p>
-          )}
-          <button
-            type="submit"
-            disabled={status === "sending"}
-            className="border border-accent px-6 py-3 font-label text-sm uppercase tracking-[0.2em] text-accent hover:bg-accent hover:text-on-accent disabled:opacity-50"
+    <Section
+      canvas="a"
+      className="relative flex min-h-svh flex-col justify-center overflow-hidden pt-32 pb-20"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-size-[64px_64px] opacity-30"
+      />
+
+      <Container className="relative z-10 max-w-2xl">
+        {status === "sent" ? (
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-start gap-4"
           >
-            {status === "sending" ? "Sending…" : "Send"}
-          </button>
-        </form>
+            <span className="h-3 w-3 bg-accent" aria-hidden="true" />
+            <h1 className="text-display-md font-display">Message sent.</h1>
+            <p className="max-w-sm font-body text-lg text-ink-muted">
+              We&apos;ll get back to you by email. Eventually.
+            </p>
+          </motion.div>
+        ) : (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="flex flex-col items-start gap-6"
+          >
+            <motion.p
+              variants={snapUp}
+              className="flex items-center gap-3 font-label text-xs uppercase tracking-[0.3em] text-ink-faint"
+            >
+              <span className="inline-block h-[0.35em] w-[0.35em] bg-accent" />
+              Bugs, gripes, whatever
+            </motion.p>
+
+            <motion.h1
+              variants={snapUp}
+              className="text-display-md font-display leading-[0.95]"
+            >
+              Something&apos;s broken.
+              <br />
+              Or missing. Or both.
+            </motion.h1>
+
+            <motion.p variants={snapUp} className="max-w-md font-body text-lg text-ink-muted">
+              Say it here. Goes straight to whoever&apos;s actually building this,
+              not a support queue.
+            </motion.p>
+
+            <motion.form
+              variants={snapUp}
+              onSubmit={handleSubmit}
+              className="mt-6 flex w-full flex-col gap-8"
+            >
+              <label className="flex flex-col gap-2">
+                <span className="font-label text-xs uppercase tracking-[0.15em] text-ink-muted">
+                  Your email
+                </span>
+                <input
+                  type="email"
+                  required
+                  value={senderEmail}
+                  onChange={(e) => setSenderEmail(e.target.value)}
+                  className={fieldClasses}
+                />
+              </label>
+              <label className="flex flex-col gap-2">
+                <span className="font-label text-xs uppercase tracking-[0.15em] text-ink-muted">
+                  Subject
+                </span>
+                <input
+                  type="text"
+                  required
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  className={fieldClasses}
+                />
+              </label>
+              <label className="flex flex-col gap-2">
+                <span className="font-label text-xs uppercase tracking-[0.15em] text-ink-muted">
+                  What&apos;s going on
+                </span>
+                <textarea
+                  required
+                  rows={5}
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  className={`${fieldClasses} resize-none`}
+                />
+              </label>
+              {status === "error" && error && (
+                <p className="font-body text-sm text-danger">{error}</p>
+              )}
+              <ButtonAction type="submit" disabled={status === "sending"} className="self-start">
+                {status === "sending" ? "Sending…" : "Send it"}
+              </ButtonAction>
+            </motion.form>
+          </motion.div>
+        )}
       </Container>
     </Section>
   );
