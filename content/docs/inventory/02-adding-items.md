@@ -36,6 +36,9 @@ you've picked show up in a Recent section for quick access. If the
 brand or type you need isn't listed, type it in anyway — it gets saved
 and can be edited later from Settings.
 
+### Listed in
+You pick here in what platform you listed this garment. This is preloaded with only carousel and facebook page but you can edit it ins ettings. Guide here
+
 ### Gender
 
 Pick whether the garment is for women, men, or unisex.

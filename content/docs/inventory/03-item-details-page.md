@@ -23,6 +23,7 @@ and an already-sold one.
   this one. Take it easy on us, woke bastards.
 - **Price** — purchase amount and selling price, both labeled "each"
   since an item can have more than one unit in stock.
+- **Listed In** — This refer in what platform you listed this item.
 - **Issue/Notes** — whatever you flagged when adding the item shows up
   here.
 
