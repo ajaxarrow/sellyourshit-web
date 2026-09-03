@@ -7,12 +7,20 @@ export function Nav() {
       <Link href="/" className="leading-none">
         <Wordmark fontSize={22} />
       </Link>
-      <Link
-        href="/docs"
-        className="font-body text-xs uppercase tracking-[0.2em] text-ink-muted hover:text-accent"
-      >
-        Docs
-      </Link>
+      <div className="flex items-center gap-6">
+        <Link
+          href="/docs"
+          className="font-body text-xs uppercase tracking-[0.2em] text-ink-muted hover:text-accent"
+        >
+          Docs
+        </Link>
+        <Link
+          href="/contact"
+          className="font-body text-xs uppercase tracking-[0.2em] text-ink-muted hover:text-accent"
+        >
+          Contact
+        </Link>
+      </div>
     </nav>
   );
 }

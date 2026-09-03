@@ -12,6 +12,9 @@ export function Footer() {
           <Link href="/docs" className="hover:text-accent">
             Docs
           </Link>
+          <Link href="/contact" className="hover:text-accent">
+            Contact
+          </Link>
         </nav>
       </Container>
     </footer>
