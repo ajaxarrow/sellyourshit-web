@@ -164,6 +164,11 @@ a {
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 3px;
+  transition: opacity 0.15s ease;
+}
+
+.doc-content a:hover {
+  opacity: 0.7;
 }
 
 .doc-content img {

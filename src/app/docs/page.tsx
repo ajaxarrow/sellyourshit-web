@@ -12,14 +12,17 @@ export default function DocsIndexPage() {
         {sections.map((section) => {
           const pages = getSectionPages(section);
           return (
-            <div key={section} className="border border-border-strong p-6">
+            <div
+              key={section}
+              className="border border-border-strong p-6 transition-colors hover:border-accent"
+            >
               <h2 className="mb-3 font-display text-xl">{sectionTitle(section)}</h2>
               <ul className="space-y-1">
                 {pages.map((p) => (
                   <li key={p.slug}>
                     <Link
                       href={`/docs/${p.section}/${p.slug}`}
-                      className="text-ink-muted underline underline-offset-2 hover:text-accent"
+                      className="text-ink-muted underline underline-offset-2 transition-colors hover:text-accent"
                     >
                       {p.title}
                     </Link>
