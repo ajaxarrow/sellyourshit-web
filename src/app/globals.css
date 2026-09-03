@@ -79,15 +79,24 @@ body {
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-display), "Anton", sans-serif;
-  text-transform: uppercase;
-  margin: 0;
+/* Layered (not left bare) so Tailwind's utilities — mb-*, mt-*, etc. —
+   can still override these on a per-element basis; an unlayered rule
+   would otherwise beat the utilities layer regardless of specificity. */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), "Anton", sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
 }
 
 a {
