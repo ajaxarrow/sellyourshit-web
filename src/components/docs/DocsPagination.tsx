@@ -6,8 +6,8 @@ function PaginationLink({ item, direction }: { item: DocNavItem; direction: "pre
   return (
     <Link
       href={`/docs/${item.section}/${item.slug}`}
-      className={`group flex min-w-0 flex-col gap-1 border-border px-5 py-4 transition-colors hover:border-accent ${
-        direction === "prev" ? "items-start border" : "items-end border text-right"
+      className={`group flex min-w-0 flex-col items-start gap-1 border border-border px-5 py-4 text-left transition-colors hover:border-accent ${
+        direction === "next" ? "sm:items-end sm:text-right" : ""
       }`}
     >
       <span className="font-label text-xs uppercase tracking-[0.2em] text-ink-faint">
@@ -28,7 +28,10 @@ export function DocsPagination({
   if (!prev && !next) return null;
 
   return (
-    <nav aria-label="Doc pagination" className="mt-16 grid grid-cols-2 gap-4 border-t border-border pt-8">
+    <nav
+      aria-label="Doc pagination"
+      className="mt-16 grid grid-cols-1 gap-4 border-t border-border pt-8 sm:grid-cols-2"
+    >
       <div>{prev && <PaginationLink item={prev} direction="prev" />}</div>
       <div>{next && <PaginationLink item={next} direction="next" />}</div>
     </nav>

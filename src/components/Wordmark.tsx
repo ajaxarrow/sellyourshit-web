@@ -1,5 +1,5 @@
 interface WordmarkProps {
-  fontSize?: number;
+  fontSize?: number | string;
   className?: string;
 }
 
@@ -20,7 +20,7 @@ export function Wordmark({ fontSize = 40, className = "" }: WordmarkProps) {
       <span>T</span>
       <span
         className="ml-[0.06em] mb-[0.06em] inline-block bg-accent"
-        style={{ width: fontSize * 0.14, height: fontSize * 0.14 }}
+        style={{ width: "0.14em", height: "0.14em" }}
       />
     </span>
   );

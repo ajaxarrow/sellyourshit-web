@@ -75,6 +75,21 @@ export function sectionTitle(section: string): string {
     .join(" ");
 }
 
+export interface DocsNavSection {
+  section: string;
+  title: string;
+  pages: DocMeta[];
+}
+
+/** Every section with its display title and pages, precomputed once for sidebar/mobile nav. */
+export function getDocsNavTree(): DocsNavSection[] {
+  return getNavSections().map((section) => ({
+    section,
+    title: sectionTitle(section),
+    pages: getSectionPages(section),
+  }));
+}
+
 export function getSectionPages(section: string): DocMeta[] {
   return docSlugsInSection(section)
     .map((slug) => {

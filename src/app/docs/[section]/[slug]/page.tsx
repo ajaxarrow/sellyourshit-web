@@ -31,7 +31,10 @@ export default async function DocPage({ params }: PageProps) {
   const { prev, next } = getAdjacentDocs(doc.section, doc.slug);
 
   return (
-    <Container bleed className="relative flex gap-16 px-10 py-16">
+    <Container
+      bleed
+      className="relative flex gap-8 px-4 py-10 sm:px-6 md:gap-16 md:px-10 md:py-16"
+    >
       <div className="min-w-0 flex-1 max-w-[720px]">
         <article className="doc-content" dangerouslySetInnerHTML={{ __html: doc.html }} />
         <DocsPagination prev={prev} next={next} />
