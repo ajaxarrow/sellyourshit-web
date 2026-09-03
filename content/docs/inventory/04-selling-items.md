@@ -43,7 +43,7 @@ to give away, even though you really don't want to.
 
 ### Selecting Items
 
-1. Tap the checkbox icon in the upper-right of the Inventory page.
+1. Tap the **checkbox icon** in the upper-right of the Inventory page.
 2. Pick out the items you want to select. You can still search or
    filter while doing this — see
    [Filtering and Searching](./05-filtering-and-searching.md) — so it's
@@ -62,18 +62,17 @@ them, then tap **Sell N Items**.
 
 By default, you enter a selling price per item. But sometimes there's
 no per-item price — a customer just says "5 for 500" and calls it a
-day. That's what the Bundle Total option is for: enter the total, and
-the app splits it across the items in the computation for you. You
-don't need to work out the individual sold price yourself, you lazy
-bastard.
+day. That's what the **Bundle Total** option is for: enter the total,
+and the app splits it across the items for you. You don't need to work
+out the individual sold price yourself, you lazy bastard.
 
 ## Confirm Sale
 
-Once every detail's filled in, tap Confirm and you're done.
+Once every detail's filled in, tap **Confirm** and you're done.
 
 ### Undo Sale
 
-Undo a sale by opening the sold item and tapping Undo Sale — see
+Undo a sale by opening the sold item and tapping **Undo Sale** — see
 [Item Details](./03-item-details-page.md#undo-sale-button) for exactly
 what that does. Heads up: this only undoes that one garment. If it was
 part of a bulk transaction, the rest of the sale stays intact. Undoing

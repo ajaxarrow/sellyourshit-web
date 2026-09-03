@@ -5,7 +5,7 @@ order: 2
 
 # Adding an Item
 
-There's one way in to the item form, whether you're adding your first
+There's one way into the item form, whether you're adding your first
 item or your five-hundredth: the **+** button on the inventory screen.
 
 ## Manual Entry
@@ -13,7 +13,7 @@ item or your five-hundredth: the **+** button on the inventory screen.
 Fill in the fields below, attach at least one photo, and save — the
 item appears at the top of your inventory immediately.
 
-![Item form example](./images/adding-items/item-form-example.png)
+![Item form example](./images/02-adding-items/item-form-example.png)
 
 ### Photos
 
@@ -36,8 +36,12 @@ you've picked show up in a Recent section for quick access. If the
 brand or type you need isn't listed, type it in anyway — it gets saved
 and can be edited later from Settings.
 
-### Listed in
-You pick here in what platform you listed this garment. This is preloaded with only carousel and facebook page but you can edit it ins ettings. Guide here
+### Listed In
+
+This is where you pick what platform you listed this garment on. It's
+preloaded with only Carousell and Facebook Page, but you can edit it in
+Settings — see the
+[Settings Walkthrough](../settings/01-settings-walkthrough.md) for how.
 
 ### Gender
 

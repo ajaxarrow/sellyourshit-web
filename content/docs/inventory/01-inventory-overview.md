@@ -13,7 +13,7 @@ sourced ones.
 
 Items can be tagged as coming **from your own closet** (stuff you
 already owned) or as something you sourced specifically to resell.
-That distinction isn't just for show, closet items skip cost-basis
+That distinction isn't just for show — closet items skip cost-basis
 tracking entirely in the analytics breakdown, since there was never a
 purchase price to log for that hoodie you've owned since 2019.
 

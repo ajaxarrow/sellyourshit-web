@@ -10,26 +10,36 @@ one hoodie? That's what this page is for.
 
 ## Search
 
-Tap the magnifying glass in the app bar to pull up the search field.
-Type in a keyword and the list narrows to items matching it by name or
-brand — no need to hit enter, results update as you type. See
-[Inventory Overview](./01-inventory-overview.md#search-button) for
+1. Tap the **magnifying glass** in the app bar to pull up the search
+   field.
+2. Type a keyword — the list narrows to items matching it by name or
+   brand. No need to hit enter; results update as you type.
+
+See [Inventory Overview](./01-inventory-overview.md#search-button) for
 where that button lives.
 
 ## Filter and Sort
 
-Tap the filter button (next to check icon) to trigger the filter and sort modal
+Tap the **filter button** (next to the **checkbox icon**) to open the
+filter and sort modal.
 
-- **Status** - Avilable, all or sold. There is already this badge in the main screen so if you adjust it here, it is also reflected in the main tabs. 
-- **Sort By ** — by date added, date sold, name, price that is in high to low, ascending, descending, whatever you name it
-- **Issue** - You can filter garments with issue or not
+### Filter Options
+
+- **Status** — Available, all, or sold. This badge already shows on
+  the main screen, so adjusting it here also updates it there.
+- **Issue** — filter for garments with a flagged issue, or without
+  one.
 - **Gender** — men's, women's, or unisex.
-- **Funding Source** — 
+- **Funding Source** — closet or sourced. See
   [Closet vs. Sourced Items](./01-inventory-overview.md#closet-vs-sourced-items)
   for what that distinction actually means.
-
 - **Brand and Type** — narrow down to specific brands or garment
   types.
+
+### Sort Options
+
+- **Sort By** — date added, date sold, name, or price, in ascending
+  or descending order.
 
 Filters and sorting stack together, so you can pull up, say, every
 sourced men's hoodie sorted by price and actually find the thing
