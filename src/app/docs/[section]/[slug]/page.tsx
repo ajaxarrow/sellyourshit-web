@@ -33,7 +33,7 @@ export default async function DocPage({ params }: PageProps) {
   return (
     <Container
       bleed
-      className="relative flex gap-8 px-4 py-10 sm:px-6 md:gap-16 md:px-10 md:py-16"
+      className="relative flex gap-8 px-4 py-10 sm:px-6 md:gap-16 md:px-10 md:py-10"
     >
       <div className="min-w-0 flex-1 max-w-[720px]">
         <article className="doc-content" dangerouslySetInnerHTML={{ __html: doc.html }} />

@@ -71,6 +71,45 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ── Scrollbar ──────────────────────────────────────────────────
+   Brutalist: square, chunky, high-contrast — no native rounded bars.
+   Chromium 121+ now supports scrollbar-color/-width too, but when
+   it's set it silently drops the ::-webkit-scrollbar pseudo-elements
+   below and falls back to its own (rounded) native thumb shape — so
+   scrollbar-color has to stay gated to Firefox specifically (the
+   only engine -moz-appearance is true in) rather than applied via
+   a bare `*`, or Chrome loses the square styling entirely. */
+@supports (-moz-appearance: none) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) var(--bg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border: 3px solid var(--bg);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--bg);
+}
+
 body {
   background: var(--bg);
   color: var(--ink);

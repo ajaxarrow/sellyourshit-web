@@ -8,7 +8,7 @@ export function DocsSidebar({ sections }: { sections: DocsNavSection[] }) {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-16 hidden h-[calc(100vh-4rem)] w-64 shrink-0 self-start overflow-y-auto border-r border-border px-6 py-28 md:block">
+    <nav className="sticky top-16 hidden h-[calc(100vh-4rem)] w-64 shrink-0 self-start overflow-y-auto border-r border-border px-6 py-10 md:block">
       {sections.map((s) => (
         <div key={s.section} className="mb-9">
           <p className="mb-3 font-label text-xs uppercase tracking-[0.25em] text-ink-faint">

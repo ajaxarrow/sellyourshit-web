@@ -20,6 +20,14 @@ export function Nav() {
         >
           Contact
         </Link>
+        <a
+          href="https://ajaxarrow.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-body text-xs uppercase tracking-[0.2em] text-ink-muted underline decoration-transparent underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+        >
+          Dev
+        </a>
       </div>
     </nav>
   );

@@ -82,7 +82,7 @@ or a functioning human?
 ### Edit Button
 
 Click here to modify something — even a sold item stays editable. Not
-sure if that's a bug or a feature. As they say, "it's not a bug, it's a
+sure if this is the right thing but as they say, "it's not a bug, it's a
 feature."
 
 ### Delete Button

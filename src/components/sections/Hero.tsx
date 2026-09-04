@@ -1,11 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Wordmark } from "@/components/Wordmark";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { staggerContainer, snapUp } from "@/components/ui/motion-variants";
+
+const heroLinkClasses =
+  "group flex items-center gap-1 font-label text-sm uppercase tracking-[0.2em] text-ink-muted underline decoration-transparent underline-offset-4 transition-colors hover:text-accent hover:decoration-accent";
 
 export function Hero() {
   return (
@@ -39,30 +43,39 @@ export function Hero() {
 
           <motion.p variants={snapUp} className="max-w-xl font-body text-lg text-ink-muted">
             This is an inventory slash sales tracking platform for garment resellers
-            who are just starting their own business — built by people who got
+            who are just starting their own business. Built by someone who got
             tired of doing this in a notes app too.
           </motion.p>
 
-          <motion.div variants={snapUp} className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            <Button href="/docs">Read the docs</Button>
-            <a
-              href="/contact"
-              className="font-label text-sm uppercase tracking-[0.2em] text-ink-muted transition-colors hover:text-accent"
-            >
-              Get in touch →
+          <motion.div variants={snapUp}>
+            <Button href="/downloads/sellyoshit.apk" download>
+              <span aria-hidden="true">↓</span> Download for Android
+            </Button>
+          </motion.div>
+
+          <motion.div variants={snapUp} className="flex flex-wrap items-center gap-x-10 gap-y-4">
+            <Link href="/docs" className={heroLinkClasses}>
+              Docs
+              <span
+                aria-hidden="true"
+                className="inline-block transition-transform group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+
+            <a href="/contact" className={heroLinkClasses}>
+              Get in touch
+              <span
+                aria-hidden="true"
+                className="inline-block transition-transform group-hover:translate-x-1"
+              >
+                →
+              </span>
             </a>
           </motion.div>
         </motion.div>
       </Container>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.9, duration: 0.6 }}
-        className="absolute bottom-8 left-6 z-10 font-label text-[0.65rem] tracking-[0.3em] text-ink-faint uppercase md:left-[6vw]"
-      >
-        Scroll ↓
-      </motion.p>
     </Section>
   );
 }

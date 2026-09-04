@@ -6,24 +6,38 @@ export default function DocsIndexPage() {
   const sections = getNavSections();
 
   return (
-    <Container className="py-16">
+    <Container className="py-10">
+      <p className="mb-4 flex items-center gap-3 font-label text-xs uppercase tracking-[0.3em] text-ink-faint">
+        <span className="inline-block h-[0.35em] w-[0.35em] bg-accent" aria-hidden="true" />
+        {sections.length} sections
+      </p>
       <h1 className="mb-10 font-display text-display-md">Documentation</h1>
       <div className="grid gap-8 sm:grid-cols-2">
-        {sections.map((section) => {
+        {sections.map((section, i) => {
           const pages = getSectionPages(section);
           return (
             <div
               key={section}
-              className="border border-border-strong p-6 transition-colors hover:border-accent"
+              className="relative border border-border-strong p-6 pt-8 transition-colors hover:border-accent"
             >
-              <h2 className="mb-3 font-display text-xl">{sectionTitle(section)}</h2>
-              <ul className="space-y-1">
+              <span
+                className="absolute top-0 left-0 h-1 w-10 bg-accent"
+                aria-hidden="true"
+              />
+              <div className="mb-4 flex items-baseline justify-between gap-3">
+                <h2 className="font-display text-xl">{sectionTitle(section)}</h2>
+                <span className="font-label text-xs text-ink-faint">
+                  {String(i + 1).padStart(2, "0")} / {String(pages.length).padStart(2, "0")}
+                </span>
+              </div>
+              <ul className="space-y-2">
                 {pages.map((p) => (
                   <li key={p.slug}>
                     <Link
                       href={`/docs/${p.section}/${p.slug}`}
-                      className="text-ink-muted underline underline-offset-2 transition-colors hover:text-accent"
+                      className="group/link flex items-center gap-2 text-sm text-ink-muted transition-colors hover:text-accent"
                     >
+                      <span className="inline-block h-1 w-1 shrink-0 bg-border-strong transition-colors group-hover/link:bg-accent" />
                       {p.title}
                     </Link>
                   </li>
