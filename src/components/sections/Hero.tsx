@@ -34,7 +34,7 @@ export function Hero() {
             className="flex items-center gap-3 font-label text-xs uppercase tracking-[0.3em] text-ink-faint"
           >
             <span className="inline-block h-[0.35em] w-[0.35em] bg-accent" />
-            For resellers starting from zero
+            Reselling Inventory & Sales Tracking App
           </motion.p>
 
           <motion.div variants={snapUp}>

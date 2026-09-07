@@ -77,7 +77,7 @@ export default function ContactPage() {
               className="flex items-center gap-3 font-label text-xs uppercase tracking-[0.3em] text-ink-faint"
             >
               <span className="inline-block h-[0.35em] w-[0.35em] bg-accent" />
-              Bugs, gripes, whatever
+              Got any concerns, rants, problems?
             </motion.p>
 
             <motion.h1
@@ -90,8 +90,7 @@ export default function ContactPage() {
             </motion.h1>
 
             <motion.p variants={snapUp} className="max-w-md font-body text-lg text-ink-muted">
-              Say it here. Goes straight to whoever&apos;s actually building this,
-              not a support queue.
+              Say it here. Goes straight to whoever&apos;s actually building this.
             </motion.p>
 
             <motion.form
