@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv *)",
+      "Bash(grep -oE \"\\\\.bg-bg\\\\\\\\\\\\\\\\/90[^{]*\\\\{[^}]*\\\\}\" .next/static/css/*.css)",
+      "Bash(git commit -m 'style: add hover feedback to docs index cards and doc content links *)",
+      "Bash(git commit -m 'feat: redesign homepage and contact page *)",
+      "Bash(where flutter *)",
+      "Bash(flutter --version)",
+      "Bash(flutter build *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\ajaxa\\AjaxArrow\\Projects\\sideshits\\wornd"
+    ]
+  }
+}

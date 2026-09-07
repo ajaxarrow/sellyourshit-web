@@ -10,6 +10,7 @@ profile. This page walks through the fields it needs and what happens
 after you save.
 
 ## Needed Fields
+![Onboarding Page](./images/onboarding-setup/01-onboarding-page.jpg)
 
 The onboarding form only asks for a couple of things — everything else
 can be filled in later from Settings.
@@ -40,8 +41,6 @@ There's no server round-trip — everything lives on-device.
 
 Ready to put something in that empty inventory? See
 [Adding an Item](../inventory/02-adding-items.md) next.
-
-![Onboarding profile form](./images/onboarding-setup/step-1-profile-form.png)
 
 ## Further Modifications
 You can still change this data in Settings under Profile. See the [Settings walkthrough](../settings/01-settings-walkthrough.md) to see how to change these fields.

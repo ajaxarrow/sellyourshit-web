@@ -9,6 +9,7 @@ import rehypeStringify from "rehype-stringify";
 import { remarkDocLinks } from "./remark-doc-links";
 import { remarkDocImages } from "./remark-doc-images";
 import { rehypeCollectHeadings, type Heading } from "./rehype-collect-headings";
+import { rehypeImageCaptions } from "./rehype-image-captions";
 
 const DOCS_DIR = path.join(process.cwd(), "content", "docs");
 
@@ -141,6 +142,7 @@ export async function getDocBySlug(section: string, slug: string): Promise<DocPa
     .use(remarkDocLinks, { section, slug })
     .use(remarkDocImages, { section, slug })
     .use(remarkRehype)
+    .use(rehypeImageCaptions)
     .use(rehypeCollectHeadings)
     .use(rehypeStringify)
     .process(content);

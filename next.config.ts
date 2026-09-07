@@ -12,6 +12,20 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Doc screenshots/gifs (public/_docs, synced from content/docs/**/images
+  // by scripts/sync-docs-images.mjs) don't change without a re-sync, so
+  // the browser can hold onto them across doc-to-doc navigation instead
+  // of re-requesting on every page load.
+  async headers() {
+    return [
+      {
+        source: "/_docs/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
