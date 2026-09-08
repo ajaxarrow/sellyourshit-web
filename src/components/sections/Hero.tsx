@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { motion } from "motion/react";
 import { Wordmark } from "@/components/Wordmark";
 import { Container } from "@/components/ui/Container";
@@ -15,7 +16,19 @@ interface HeroProps {
   downloadCount: number;
 }
 
+// How long the button reads "Downloading…" after a click — just enough
+// to acknowledge the click before the browser's own download UI takes
+// over; it's not tied to when the (~70MB) file actually finishes.
+const DOWNLOADING_LABEL_MS = 3000;
+
 export function Hero({ downloadCount }: HeroProps) {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  function handleDownloadClick() {
+    setIsDownloading(true);
+    window.setTimeout(() => setIsDownloading(false), DOWNLOADING_LABEL_MS);
+  }
+
   return (
     <Section
       canvas="a"
@@ -52,8 +65,19 @@ export function Hero({ downloadCount }: HeroProps) {
           </motion.p>
 
           <motion.div variants={snapUp}>
-            <Button href="/api/download" download="sellyoshit.apk">
-              <span aria-hidden="true">↓</span> Download for Android
+            <Button
+              href="/api/download"
+              download="sellyoshit.apk"
+              onClick={handleDownloadClick}
+              className={isDownloading ? "pointer-events-none opacity-70" : ""}
+            >
+              {isDownloading ? (
+                "Downloading…"
+              ) : (
+                <>
+                  <span aria-hidden="true">↓</span> Download for Android
+                </>
+              )}
             </Button>
             {downloadCount > 0 && (
               <p className="mt-2 font-body text-xs text-ink-faint">

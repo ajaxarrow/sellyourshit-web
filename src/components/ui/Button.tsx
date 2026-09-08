@@ -28,6 +28,7 @@ interface ButtonProps {
   variant?: ButtonVariant;
   /** Set to force a real file download (plain `<a download>`) instead of Next client-side routing. */
   download?: boolean | string;
+  onClick?: () => void;
 }
 
 /** Outlined-to-filled CTA with a subtle magnetic pull, for internal/external navigation. */
@@ -37,6 +38,7 @@ export function Button({
   className = "",
   variant = "outline",
   download,
+  onClick,
 }: ButtonProps) {
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
@@ -61,6 +63,7 @@ export function Button({
         <a
           href={href}
           download={download}
+          onClick={onClick}
           onPointerMove={handlePointerMove}
           onPointerLeave={handlePointerLeave}
           className={buttonClasses}
@@ -70,6 +73,7 @@ export function Button({
       ) : (
         <Link
           href={href}
+          onClick={onClick}
           onPointerMove={handlePointerMove}
           onPointerLeave={handlePointerLeave}
           className={buttonClasses}
