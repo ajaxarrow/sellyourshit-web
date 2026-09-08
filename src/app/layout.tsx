@@ -3,6 +3,7 @@ import { Anton, Bebas_Neue, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { Nav } from "@/components/Nav";
+import { Footer } from "@/components/Footer";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CustomCursor } from "@/components/CustomCursor";
 
@@ -44,6 +45,7 @@ export default function RootLayout({
         <Providers>
           <Nav />
           {children}
+          <Footer />
           <ThemeToggle />
           <CustomCursor />
         </Providers>

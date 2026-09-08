@@ -10,6 +10,8 @@ one hoodie? That's what this page is for.
 
 ## Search
 
+![Search](./images/05-filtering-and-searching/01-searching.jpg)
+
 1. Tap the **magnifying glass** in the app bar to pull up the search
    field.
 2. Type a keyword — the list narrows to items matching it by name or
@@ -24,6 +26,12 @@ Tap the **filter button** (next to the **checkbox icon**) to open the
 filter and sort modal.
 
 ### Filter Options
+
+![Filter Modal (1/3)](./images/05-filtering-and-searching/02-filtering-modal.jpg)
+
+![Filter Modal (2/3)](./images/05-filtering-and-searching/03-filtering-modal-part-2.jpg)
+
+![Filter Modal (3/3)](./images/05-filtering-and-searching/04-filtering-modal-part-3.jpg)
 
 - **Status** — Available, all, or sold. This badge already shows on
   the main screen, so adjusting it here also updates it there.
@@ -46,6 +54,8 @@ sourced men's hoodie sorted by price and actually find the thing
 instead of scrolling for ten minutes like an animal.
 
 ## Filtering While Selecting
+
+![Filtering While Selecting](./images/05-filtering-and-searching/05-filtering-while-selecting.jpg)
 
 Search, filter, and the view-as buttons all stay available while
 you're selecting items to sell — see

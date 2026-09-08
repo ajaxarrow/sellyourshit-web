@@ -11,7 +11,11 @@ import { staggerContainer, snapUp } from "@/components/ui/motion-variants";
 const heroLinkClasses =
   "group flex items-center gap-1 font-label text-sm uppercase tracking-[0.2em] text-ink-muted underline decoration-transparent underline-offset-4 transition-colors hover:text-accent hover:decoration-accent";
 
-export function Hero() {
+interface HeroProps {
+  downloadCount: number;
+}
+
+export function Hero({ downloadCount }: HeroProps) {
   return (
     <Section
       canvas="a"
@@ -48,9 +52,14 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={snapUp}>
-            <Button href="/downloads/sellyoshit.apk" download>
+            <Button href="/api/download" download="sellyoshit.apk">
               <span aria-hidden="true">↓</span> Download for Android
             </Button>
+            {downloadCount > 0 && (
+              <p className="mt-2 font-body text-xs text-ink-faint">
+                {downloadCount.toLocaleString()} downloads and counting
+              </p>
+            )}
           </motion.div>
 
           <motion.div variants={snapUp} className="flex flex-wrap items-center gap-x-10 gap-y-4">

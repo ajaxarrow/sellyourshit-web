@@ -13,7 +13,7 @@ sellyoshit is an inventory and sales tracker for resellers. Here's how to get it
 Go to the [homepage](/) and click **Download for Android**.
 
 ### Option 2: Direct Download
-Skip the extra step — [download the APK directly](/downloads/sellyoshit.apk).
+Skip the extra step — [download the APK directly](/api/download).
 
 ## FAQs
 

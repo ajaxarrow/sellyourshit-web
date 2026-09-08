@@ -10,6 +10,8 @@ the actions you can take there.
 
 ## Available Item Anatomy
 
+![Available Item](./images/03-item-details-page/01-available-item-anatomy.jpg)
+
 There's a difference between the details shown for an available item
 and an already-sold one.
 
@@ -38,6 +40,8 @@ that flow works.
 
 ## Sold Item Anatomy
 
+![Sold Item](./images/03-item-details-page/02-sold-item-anatomy.jpg)
+
 There are additional fields and a button for a sold item.
 
 ### Added Information
@@ -51,9 +55,10 @@ This shows a few extra details:
 
 ### Bulk Sold vs. Single Sold Difference
 
+![Bulk Sold Item](./images/03-item-details-page/03-bulk-sold-item.jpg)
+
 Look, I'd suggest reading [Selling Items](./04-selling-items.md) first
-if you haven't, because this next part will fry your brain if you're
-new to reselling. And if you still don't get it after that... why the
+if you haven't. And if you still don't get it after that... why the
 farts are you reselling, you beautiful disaster of a human?
 
 Just kidding. Sold price works a little differently when an item goes
@@ -64,14 +69,19 @@ that same bulk sale.
 
 ### Undo Sale Button
 
+![Undo Sale](./images/03-item-details-page/04-undo-sale.jpg)
+
 Click here to undo a sale. We don't support editing a transaction
 directly, so undoing it is the workaround.
 
 Note: undoing a sale on an item that's part of a bulk sale doesn't undo
-the whole transaction — it just detaches that one item from it. Undoing
-an entire transaction in one shot isn't covered in these docs yet.
+the whole transaction — it just detaches that one item from it. To undo
+an entire transaction in one shot, see the **Action Button** section
+on the [Sold Page Walkthrough](../sold/01-sold-walkthrough.md#action-button).
 
 ## Header Action Items
+
+![Header Actions](./images/03-item-details-page/05-header-action-items.jpg)
 
 ### Back Button
 
@@ -86,6 +96,8 @@ sure if this is the right thing but as they say, "it's not a bug, it's a
 feature."
 
 ### Delete Button
+
+![Delete Confirmation](./images/03-item-details-page/06-delete-confirmation.jpg)
 
 Click here to delete an item. You can still delete it even after it's
 part of a transaction — deleting it just removes it from that

@@ -12,6 +12,8 @@ with the easy, straightforward one.
 
 ### Choosing an Item
 
+![Choosing an Item](./images/04-selling-items/01-choosing-an-item.jpg)
+
 1. Go to Inventory and tap the item you want to mark as sold.
 2. On the details page, tap **Mark as Sold**. See
    [Item Details](./03-item-details-page.md#mark-as-sold-button) for
@@ -19,6 +21,8 @@ with the easy, straightforward one.
    still can't find it, that's on you, not our frontend developer.
 
 ### Main Details
+
+![Sold Item Details](./images/04-selling-items/02-mark-as-sold-details.jpg)
 
 Once you tap the button, a modal overlay pops up asking for:
 
@@ -32,7 +36,13 @@ Once you tap the button, a modal overlay pops up asking for:
   repeat customers are worth tracking. Manage your customer list in
   Settings.
 
+![Selecting Channel](./images/04-selling-items/03-selecting-channel.jpg)
+
+![Selecting Customer](./images/04-selling-items/04-selecting-customer.jpg)
+
 ### Freebie Items
+
+![Adding a Freebie](./images/04-selling-items/05-adding-freebie-item.jpg)
 
 Sometimes you throw in a freebie to make up for your own
 incompetence — like selling an item with an issue and hoping a freebie
@@ -54,6 +64,8 @@ Please.
 
 ### Bulk Select
 
+![Bulk Select](./images/04-selling-items/06-bulk-select.jpg)
+
 This lets you sell multiple items to one customer in a single
 transaction — say a customer bought 5 items in one go. Select all of
 them, then tap **Sell N Items**.
@@ -66,6 +78,10 @@ day. That's what the **Bundle Total** option is for: enter the total,
 and the app splits it across the items for you. You don't need to work
 out the individual sold price yourself, you lazy bastard.
 
+![Per-Item Tab](./images/04-selling-items/07-bulk-select-per-item-tab.jpg)
+
+![Bundle Total Tab](./images/04-selling-items/08-bulk-select-bundle-total-tab.jpg)
+
 ## Confirm Sale
 
 Once every detail's filled in, tap **Confirm** and you're done.
@@ -75,5 +91,6 @@ Once every detail's filled in, tap **Confirm** and you're done.
 Undo a sale by opening the sold item and tapping **Undo Sale** — see
 [Item Details](./03-item-details-page.md#undo-sale-button) for exactly
 what that does. Heads up: this only undoes that one garment. If it was
-part of a bulk transaction, the rest of the sale stays intact. Undoing
-an entire transaction in one shot isn't covered in these docs yet.
+part of a bulk transaction, the rest of the sale stays intact. To undo
+an entire transaction in one shot, see the **Action Button** section
+on the [Sold Page Walkthrough](../sold/01-sold-walkthrough.md#action-button).
